@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		5BCF2B60213EB79C00FCB293 /* CocoaTypograf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BCF2B73213EB83200FCB293 /* CocoaTypograf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BCF2B75213EBEE400FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
+		5BCF2B76213EBEE400FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
+		5BCF2B98213ECC2E00FCB293 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
+		5BCF2B9A213ECC2E00FCB293 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
+		5BCF2BA1213ECF3400FCB293 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
+		5BCF2BA3213ECF3400FCB293 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
+		5BCF2BA6213ED0E200FCB293 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
+		5BCF2BA8213ED0E200FCB293 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
+		5BCF2BAB213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
+		5BCF2BAD213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +26,11 @@
 		5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaTypograf.h; sourceTree = "<group>"; };
 		5BCF2B5F213EB79C00FCB293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BCF2B6B213EB82700FCB293 /* CocoaTypograf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaTypograf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCF2B74213EBEE400FCB293 /* TypografService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografService.swift; sourceTree = "<group>"; };
+		5BCF2B97213ECC2E00FCB293 /* SOAP.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SOAP.strings; sourceTree = "<group>"; };
+		5BCF2BA0213ECF3400FCB293 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
+		5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografServiceType.swift; sourceTree = "<group>"; };
+		5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTextParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +71,39 @@
 		5BCF2B5D213EB79C00FCB293 /* CocoaTypograf */ = {
 			isa = PBXGroup;
 			children = (
+				5BCF2B9C213ECCE300FCB293 /* DTOs */,
+				5BCF2B96213ECBFD00FCB293 /* Resources */,
+				5BCF2B77213EBEFA00FCB293 /* Service */,
 				5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */,
 				5BCF2B5F213EB79C00FCB293 /* Info.plist */,
 			);
 			path = CocoaTypograf;
+			sourceTree = "<group>";
+		};
+		5BCF2B77213EBEFA00FCB293 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF2B74213EBEE400FCB293 /* TypografService.swift */,
+				5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5BCF2B96213ECBFD00FCB293 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF2B97213ECC2E00FCB293 /* SOAP.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5BCF2B9C213ECCE300FCB293 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF2BA0213ECF3400FCB293 /* EntityType.swift */,
+				5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +170,7 @@
 		5BCF2B52213EB79C00FCB293 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = dreadct;
 				TargetAttributes = {
@@ -162,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF2B9A213ECC2E00FCB293 /* SOAP.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF2B98213ECC2E00FCB293 /* SOAP.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF2BA3213ECF3400FCB293 /* EntityType.swift in Sources */,
+				5BCF2B76213EBEE400FCB293 /* TypografService.swift in Sources */,
+				5BCF2BAD213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
+				5BCF2BA8213ED0E200FCB293 /* TypografServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF2BA1213ECF3400FCB293 /* EntityType.swift in Sources */,
+				5BCF2B75213EBEE400FCB293 /* TypografService.swift in Sources */,
+				5BCF2BAB213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
+				5BCF2BA6213ED0E200FCB293 /* TypografServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
