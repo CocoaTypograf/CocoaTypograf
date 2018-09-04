@@ -20,6 +20,20 @@
                ReferencedContainer = "container:CocoaTypograf.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5BCF2B7B213ECB2700FCB293"
+               BuildableName = "CocoaTypografTests.xctest"
+               BlueprintName = "CocoaTypograf-macOSTests"
+               ReferencedContainer = "container:CocoaTypograf.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,7 +42,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5BCF2B7B213ECB2700FCB293"
+               BuildableName = "CocoaTypografTests.xctest"
+               BlueprintName = "CocoaTypograf-macOSTests"
+               ReferencedContainer = "container:CocoaTypograf.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5BCF2B5A213EB79C00FCB293"
+            BuildableName = "CocoaTypograf.framework"
+            BlueprintName = "CocoaTypograf-macOS"
+            ReferencedContainer = "container:CocoaTypograf.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

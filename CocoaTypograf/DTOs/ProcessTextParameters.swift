@@ -41,6 +41,7 @@ extension ProcessTextParameters {
     fileprivate enum Constants {
         static let bodyFormatString = NSLocalizedString("soap.request.processText.format",
                                                         tableName: "SOAP",
+                                                        bundle: Bundle.current,
                                                         comment: "")
     }
 

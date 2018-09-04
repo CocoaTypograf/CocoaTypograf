@@ -7,12 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B8533B8213EE2CE00D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
+		5B8533BA213EE2CE00D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
+		5B8533BF213EE9B000D67688 /* Test.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B8533BE213EE9B000D67688 /* Test.strings */; };
+		5B8533C0213EE9B000D67688 /* Test.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B8533BE213EE9B000D67688 /* Test.strings */; };
+		5B8533C1213EEDB300D67688 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
+		5B8533C2213EEDB300D67688 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
+		5B8533C3213EEDB300D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
+		5B8533C4213EEDB300D67688 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
+		5B8533C5213EEDB300D67688 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
+		5B8533C6213EEDB300D67688 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
+		5B8533C7213EEDB400D67688 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
+		5B8533C8213EEDB400D67688 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
+		5B8533C9213EEDB400D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
+		5B8533CA213EEDB400D67688 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
+		5B8533CB213EEDB400D67688 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
+		5B8533CC213EEDB400D67688 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
 		5BCF2B60213EB79C00FCB293 /* CocoaTypograf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BCF2B73213EB83200FCB293 /* CocoaTypograf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BCF2B75213EBEE400FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
 		5BCF2B76213EBEE400FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
+		5BCF2B7F213ECB2700FCB293 /* CocoaTypografTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B7E213ECB2700FCB293 /* CocoaTypografTests.swift */; };
+		5BCF2B81213ECB2700FCB293 /* CocoaTypograf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCF2B5B213EB79C00FCB293 /* CocoaTypograf.framework */; };
+		5BCF2B90213ECB6B00FCB293 /* CocoaTypograf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCF2B6B213EB82700FCB293 /* CocoaTypograf.framework */; };
 		5BCF2B98213ECC2E00FCB293 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
 		5BCF2B9A213ECC2E00FCB293 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
+		5BCF2B9D213ECD1B00FCB293 /* CocoaTypografTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B7E213ECB2700FCB293 /* CocoaTypografTests.swift */; };
 		5BCF2BA1213ECF3400FCB293 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
 		5BCF2BA3213ECF3400FCB293 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
 		5BCF2BA6213ED0E200FCB293 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
@@ -21,12 +41,35 @@
 		5BCF2BAD213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5BCF2B82213ECB2700FCB293 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCF2B52213EB79C00FCB293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCF2B5A213EB79C00FCB293;
+			remoteInfo = "CocoaTypograf-macOS";
+		};
+		5BCF2B91213ECB6B00FCB293 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCF2B52213EB79C00FCB293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCF2B6A213EB82700FCB293;
+			remoteInfo = "CocoaTypograf-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5B8533B7213EE2CE00D67688 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		5B8533BE213EE9B000D67688 /* Test.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Test.strings; sourceTree = "<group>"; };
 		5BCF2B5B213EB79C00FCB293 /* CocoaTypograf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaTypograf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaTypograf.h; sourceTree = "<group>"; };
 		5BCF2B5F213EB79C00FCB293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BCF2B6B213EB82700FCB293 /* CocoaTypograf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaTypograf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCF2B74213EBEE400FCB293 /* TypografService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografService.swift; sourceTree = "<group>"; };
+		5BCF2B7C213ECB2700FCB293 /* CocoaTypografTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaTypografTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCF2B7E213ECB2700FCB293 /* CocoaTypografTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaTypografTests.swift; sourceTree = "<group>"; };
+		5BCF2B80213ECB2700FCB293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCF2B8B213ECB6B00FCB293 /* CocoaTypografTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaTypografTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCF2B97213ECC2E00FCB293 /* SOAP.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SOAP.strings; sourceTree = "<group>"; };
 		5BCF2BA0213ECF3400FCB293 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
 		5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografServiceType.swift; sourceTree = "<group>"; };
@@ -48,13 +91,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BCF2B79213ECB2700FCB293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCF2B81213ECB2700FCB293 /* CocoaTypograf.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF2B88213ECB6B00FCB293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCF2B90213ECB6B00FCB293 /* CocoaTypograf.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B8533B6213EE2C000D67688 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B8533B7213EE2CE00D67688 /* Bundle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B8533BC213EE99000D67688 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF2B7E213ECB2700FCB293 /* CocoaTypografTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		5B8533BD213EE99700D67688 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B8533BE213EE9B000D67688 /* Test.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5BCF2B51213EB79C00FCB293 = {
 			isa = PBXGroup;
 			children = (
 				5BCF2B5D213EB79C00FCB293 /* CocoaTypograf */,
+				5BCF2B7D213ECB2700FCB293 /* CocoaTypografTests */,
 				5BCF2B5C213EB79C00FCB293 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +148,8 @@
 			children = (
 				5BCF2B5B213EB79C00FCB293 /* CocoaTypograf.framework */,
 				5BCF2B6B213EB82700FCB293 /* CocoaTypograf.framework */,
+				5BCF2B7C213ECB2700FCB293 /* CocoaTypografTests.xctest */,
+				5BCF2B8B213ECB6B00FCB293 /* CocoaTypografTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				5BCF2B9C213ECCE300FCB293 /* DTOs */,
+				5B8533B6213EE2C000D67688 /* Extensions */,
 				5BCF2B96213ECBFD00FCB293 /* Resources */,
 				5BCF2B77213EBEFA00FCB293 /* Service */,
 				5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */,
@@ -87,6 +174,16 @@
 				5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		5BCF2B7D213ECB2700FCB293 /* CocoaTypografTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B8533BD213EE99700D67688 /* Resources */,
+				5B8533BC213EE99000D67688 /* Tests */,
+				5BCF2B80213ECB2700FCB293 /* Info.plist */,
+			);
+			path = CocoaTypografTests;
 			sourceTree = "<group>";
 		};
 		5BCF2B96213ECBFD00FCB293 /* Resources */ = {
@@ -164,6 +261,42 @@
 			productReference = 5BCF2B6B213EB82700FCB293 /* CocoaTypograf.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		5BCF2B7B213ECB2700FCB293 /* CocoaTypograf-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCF2B84213ECB2700FCB293 /* Build configuration list for PBXNativeTarget "CocoaTypograf-macOSTests" */;
+			buildPhases = (
+				5BCF2B78213ECB2700FCB293 /* Sources */,
+				5BCF2B79213ECB2700FCB293 /* Frameworks */,
+				5BCF2B7A213ECB2700FCB293 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BCF2B83213ECB2700FCB293 /* PBXTargetDependency */,
+			);
+			name = "CocoaTypograf-macOSTests";
+			productName = CocoaTypografTests;
+			productReference = 5BCF2B7C213ECB2700FCB293 /* CocoaTypografTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BCF2B8A213ECB6B00FCB293 /* CocoaTypograf-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCF2B93213ECB6B00FCB293 /* Build configuration list for PBXNativeTarget "CocoaTypograf-iOSTests" */;
+			buildPhases = (
+				5BCF2B87213ECB6B00FCB293 /* Sources */,
+				5BCF2B88213ECB6B00FCB293 /* Frameworks */,
+				5BCF2B89213ECB6B00FCB293 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BCF2B92213ECB6B00FCB293 /* PBXTargetDependency */,
+			);
+			name = "CocoaTypograf-iOSTests";
+			productName = CocoaTypografTests;
+			productReference = 5BCF2B8B213ECB6B00FCB293 /* CocoaTypografTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,6 +315,12 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
 					};
+					5BCF2B7B213ECB2700FCB293 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					5BCF2B8A213ECB6B00FCB293 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 5BCF2B55213EB79C00FCB293 /* Build configuration list for PBXProject "CocoaTypograf" */;
@@ -197,7 +336,9 @@
 			projectRoot = "";
 			targets = (
 				5BCF2B6A213EB82700FCB293 /* CocoaTypograf-iOS */,
+				5BCF2B8A213ECB6B00FCB293 /* CocoaTypograf-iOSTests */,
 				5BCF2B5A213EB79C00FCB293 /* CocoaTypograf-macOS */,
+				5BCF2B7B213ECB2700FCB293 /* CocoaTypograf-macOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +360,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BCF2B7A213ECB2700FCB293 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8533C0213EE9B000D67688 /* Test.strings in Resources */,
+				5B8533C4213EEDB300D67688 /* SOAP.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF2B89213ECB6B00FCB293 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8533BF213EE9B000D67688 /* Test.strings in Resources */,
+				5B8533CA213EEDB400D67688 /* SOAP.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -229,6 +388,7 @@
 				5BCF2BA3213ECF3400FCB293 /* EntityType.swift in Sources */,
 				5BCF2B76213EBEE400FCB293 /* TypografService.swift in Sources */,
 				5BCF2BAD213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
+				5B8533BA213EE2CE00D67688 /* Bundle.swift in Sources */,
 				5BCF2BA8213ED0E200FCB293 /* TypografServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,11 +400,51 @@
 				5BCF2BA1213ECF3400FCB293 /* EntityType.swift in Sources */,
 				5BCF2B75213EBEE400FCB293 /* TypografService.swift in Sources */,
 				5BCF2BAB213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
+				5B8533B8213EE2CE00D67688 /* Bundle.swift in Sources */,
 				5BCF2BA6213ED0E200FCB293 /* TypografServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BCF2B78213ECB2700FCB293 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8533C5213EEDB300D67688 /* TypografService.swift in Sources */,
+				5B8533C1213EEDB300D67688 /* EntityType.swift in Sources */,
+				5B8533C3213EEDB300D67688 /* Bundle.swift in Sources */,
+				5B8533C2213EEDB300D67688 /* ProcessTextParameters.swift in Sources */,
+				5BCF2B7F213ECB2700FCB293 /* CocoaTypografTests.swift in Sources */,
+				5B8533C6213EEDB300D67688 /* TypografServiceType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF2B87213ECB6B00FCB293 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8533CB213EEDB400D67688 /* TypografService.swift in Sources */,
+				5B8533C7213EEDB400D67688 /* EntityType.swift in Sources */,
+				5B8533C9213EEDB400D67688 /* Bundle.swift in Sources */,
+				5B8533C8213EEDB400D67688 /* ProcessTextParameters.swift in Sources */,
+				5BCF2B9D213ECD1B00FCB293 /* CocoaTypografTests.swift in Sources */,
+				5B8533CC213EEDB400D67688 /* TypografServiceType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BCF2B83213ECB2700FCB293 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BCF2B5A213EB79C00FCB293 /* CocoaTypograf-macOS */;
+			targetProxy = 5BCF2B82213ECB2700FCB293 /* PBXContainerItemProxy */;
+		};
+		5BCF2B92213ECB6B00FCB293 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BCF2B6A213EB82700FCB293 /* CocoaTypograf-iOS */;
+			targetProxy = 5BCF2B91213ECB6B00FCB293 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5BCF2B61213EB79C00FCB293 /* Debug */ = {
@@ -466,6 +666,73 @@
 			};
 			name = Release;
 		};
+		5BCF2B85213ECB2700FCB293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CocoaTypografTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(PROJECT_NAME)Tests";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		5BCF2B86213ECB2700FCB293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CocoaTypografTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(PROJECT_NAME)Tests";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		5BCF2B94213ECB6B00FCB293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CocoaTypografTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_NAME = "$(PROJECT_NAME)Tests";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BCF2B95213ECB6B00FCB293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CocoaTypografTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_NAME = "$(PROJECT_NAME)Tests";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -492,6 +759,24 @@
 			buildConfigurations = (
 				5BCF2B71213EB82700FCB293 /* Debug */,
 				5BCF2B72213EB82700FCB293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCF2B84213ECB2700FCB293 /* Build configuration list for PBXNativeTarget "CocoaTypograf-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCF2B85213ECB2700FCB293 /* Debug */,
+				5BCF2B86213ECB2700FCB293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCF2B93213ECB6B00FCB293 /* Build configuration list for PBXNativeTarget "CocoaTypograf-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCF2B94213ECB6B00FCB293 /* Debug */,
+				5BCF2B95213ECB6B00FCB293 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

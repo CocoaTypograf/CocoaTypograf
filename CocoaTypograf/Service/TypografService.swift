@@ -16,6 +16,7 @@ final class TypografService: TypografServiceType {
         static let httpMethod = "POST"
         static let responseRegexPattern = NSLocalizedString("soap.response.processText.regex.text",
                                                             tableName: "SOAP",
+                                                            bundle: Bundle.current,
                                                             comment: "")
         static let url = URL(string: "http://typograf.artlebedev.ru/webservices/typograf.asmx")!
     }
