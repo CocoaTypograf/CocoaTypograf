@@ -12,14 +12,15 @@ class CocoaTypografTests: XCTestCase {
 
     // MARK: - Properties
 
-    var service: TypografServiceType!
+    var service: TypografService!
+    let timeout: TimeInterval = 30.0
 
     // MARK: - Lifecycle
 
     override func setUp() {
         super.setUp()
 
-        service = TypografService()
+        service = ConcreteTypografService()
     }
 
     override func tearDown() {
@@ -29,35 +30,50 @@ class CocoaTypografTests: XCTestCase {
 
     // MARK: - Test methods
 
+    func testCancellation() {
+        let token = process(text: "") { responseText in
+            XCTAssertNil(responseText, "Operation wasn't cancelled")
+        }
+        token.cancel()
+
+        waitForExpectations(timeout: timeout, handler: nil)
+    }
+
     func testNbspProcessing() {
         process(text: Constants.nbspSourceString) { responseText in
             XCTAssertEqual(Constants.nbspExpectedString, responseText)
         }
+
+        waitForExpectations(timeout: timeout, handler: nil)
     }
 
     func testQuotesProcessing() {
         process(text: Constants.quotesSourceString) { responseText in
             XCTAssertEqual(Constants.quotesExpectedString, responseText)
         }
+
+        waitForExpectations(timeout: timeout, handler: nil)
     }
 
     // MARK: - Private methods
 
-    private func process(text: String, timeout: TimeInterval = 30.0, completion: (String) -> Void) {
+    @discardableResult
+    private func process(text: String,
+                         completion: @escaping (String?) -> Void) -> OperationToken {
         let responseExpectation = expectation(description: "Wait for response for text \"\(text)\"")
 
-        var responseText: String!
         let params = ProcessTextParameters(text: text)
-        service.processText(parameters: params) { (text, error) in
-            XCTAssertNil(error)
+        return service.processText(parameters: params) { result in
+            switch result {
+            case .cancelled:
+                completion(nil)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            case .success(let text):
+                completion(text)
+            }
             responseExpectation.fulfill()
-            responseText = text
         }
-
-        waitForExpectations(timeout: timeout, handler: nil)
-        XCTAssertNotNil(responseText)
-
-        completion(responseText)
     }
 
 }

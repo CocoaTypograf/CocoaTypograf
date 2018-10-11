@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EntityType: Int {
+public enum EntityType: Int {
     case none = 3
     case html = 1
     case xml = 2
