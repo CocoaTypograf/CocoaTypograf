@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B6B3ADA216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
+		5B6B3ADB216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
+		5B6B3ADC216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
+		5B6B3ADD216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
+		5B6B3ADF216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
+		5B6B3AE0216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
+		5B6B3AE1216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
+		5B6B3AE2216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
+		5B6B3AE4216FB47A0044E74C /* TypografServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */; };
+		5B6B3AE5216FB47A0044E74C /* TypografServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */; };
+		5B6B3AE6216FB47A0044E74C /* TypografServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */; };
+		5B6B3AE7216FB47A0044E74C /* TypografServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */; };
 		5B8533B8213EE2CE00D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
 		5B8533BA213EE2CE00D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
 		5B8533BF213EE9B000D67688 /* Test.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B8533BE213EE9B000D67688 /* Test.strings */; };
@@ -15,18 +27,18 @@
 		5B8533C2213EEDB300D67688 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
 		5B8533C3213EEDB300D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
 		5B8533C4213EEDB300D67688 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
-		5B8533C5213EEDB300D67688 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
-		5B8533C6213EEDB300D67688 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
+		5B8533C5213EEDB300D67688 /* ConcreteTypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* ConcreteTypografService.swift */; };
+		5B8533C6213EEDB300D67688 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografService.swift */; };
 		5B8533C7213EEDB400D67688 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
 		5B8533C8213EEDB400D67688 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
 		5B8533C9213EEDB400D67688 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8533B7213EE2CE00D67688 /* Bundle.swift */; };
 		5B8533CA213EEDB400D67688 /* SOAP.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF2B97213ECC2E00FCB293 /* SOAP.strings */; };
-		5B8533CB213EEDB400D67688 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
-		5B8533CC213EEDB400D67688 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
+		5B8533CB213EEDB400D67688 /* ConcreteTypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* ConcreteTypografService.swift */; };
+		5B8533CC213EEDB400D67688 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografService.swift */; };
 		5BCF2B60213EB79C00FCB293 /* CocoaTypograf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BCF2B73213EB83200FCB293 /* CocoaTypograf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BCF2B75213EBEE400FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
-		5BCF2B76213EBEE400FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* TypografService.swift */; };
+		5BCF2B75213EBEE400FCB293 /* ConcreteTypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* ConcreteTypografService.swift */; };
+		5BCF2B76213EBEE400FCB293 /* ConcreteTypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B74213EBEE400FCB293 /* ConcreteTypografService.swift */; };
 		5BCF2B7F213ECB2700FCB293 /* CocoaTypografTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B7E213ECB2700FCB293 /* CocoaTypografTests.swift */; };
 		5BCF2B81213ECB2700FCB293 /* CocoaTypograf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCF2B5B213EB79C00FCB293 /* CocoaTypograf.framework */; };
 		5BCF2B90213ECB6B00FCB293 /* CocoaTypograf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCF2B6B213EB82700FCB293 /* CocoaTypograf.framework */; };
@@ -35,8 +47,8 @@
 		5BCF2B9D213ECD1B00FCB293 /* CocoaTypografTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2B7E213ECB2700FCB293 /* CocoaTypografTests.swift */; };
 		5BCF2BA1213ECF3400FCB293 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
 		5BCF2BA3213ECF3400FCB293 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA0213ECF3400FCB293 /* EntityType.swift */; };
-		5BCF2BA6213ED0E200FCB293 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
-		5BCF2BA8213ED0E200FCB293 /* TypografServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */; };
+		5BCF2BA6213ED0E200FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografService.swift */; };
+		5BCF2BA8213ED0E200FCB293 /* TypografService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BA5213ED0E200FCB293 /* TypografService.swift */; };
 		5BCF2BAB213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
 		5BCF2BAD213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */; };
 /* End PBXBuildFile section */
@@ -59,20 +71,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B6B3AD9216FB24D0044E74C /* OperationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationResult.swift; sourceTree = "<group>"; };
+		5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToken.swift; sourceTree = "<group>"; };
+		5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografServiceError.swift; sourceTree = "<group>"; };
 		5B8533B7213EE2CE00D67688 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		5B8533BE213EE9B000D67688 /* Test.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Test.strings; sourceTree = "<group>"; };
 		5BCF2B5B213EB79C00FCB293 /* CocoaTypograf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaTypograf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaTypograf.h; sourceTree = "<group>"; };
 		5BCF2B5F213EB79C00FCB293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BCF2B6B213EB82700FCB293 /* CocoaTypograf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaTypograf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BCF2B74213EBEE400FCB293 /* TypografService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografService.swift; sourceTree = "<group>"; };
+		5BCF2B74213EBEE400FCB293 /* ConcreteTypografService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteTypografService.swift; sourceTree = "<group>"; };
 		5BCF2B7C213ECB2700FCB293 /* CocoaTypografTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaTypografTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCF2B7E213ECB2700FCB293 /* CocoaTypografTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaTypografTests.swift; sourceTree = "<group>"; };
 		5BCF2B80213ECB2700FCB293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BCF2B8B213ECB6B00FCB293 /* CocoaTypografTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaTypografTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCF2B97213ECC2E00FCB293 /* SOAP.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SOAP.strings; sourceTree = "<group>"; };
 		5BCF2BA0213ECF3400FCB293 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
-		5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografServiceType.swift; sourceTree = "<group>"; };
+		5BCF2BA5213ED0E200FCB293 /* TypografService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografService.swift; sourceTree = "<group>"; };
 		5BCF2BAA213ED3DF00FCB293 /* ProcessTextParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTextParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B6B3AD8216FB2360044E74C /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */,
+				5B6B3AD9216FB24D0044E74C /* OperationResult.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		5B8533B6213EE2C000D67688 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +183,7 @@
 			children = (
 				5BCF2B9C213ECCE300FCB293 /* DTOs */,
 				5B8533B6213EE2C000D67688 /* Extensions */,
+				5B6B3AD8216FB2360044E74C /* Operations */,
 				5BCF2B96213ECBFD00FCB293 /* Resources */,
 				5BCF2B77213EBEFA00FCB293 /* Service */,
 				5BCF2B5E213EB79C00FCB293 /* CocoaTypograf.h */,
@@ -170,8 +195,9 @@
 		5BCF2B77213EBEFA00FCB293 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				5BCF2B74213EBEE400FCB293 /* TypografService.swift */,
-				5BCF2BA5213ED0E200FCB293 /* TypografServiceType.swift */,
+				5BCF2B74213EBEE400FCB293 /* ConcreteTypografService.swift */,
+				5BCF2BA5213ED0E200FCB293 /* TypografService.swift */,
+				5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -386,10 +412,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BCF2BA3213ECF3400FCB293 /* EntityType.swift in Sources */,
-				5BCF2B76213EBEE400FCB293 /* TypografService.swift in Sources */,
+				5B6B3ADC216FB24D0044E74C /* OperationResult.swift in Sources */,
+				5BCF2B76213EBEE400FCB293 /* ConcreteTypografService.swift in Sources */,
 				5BCF2BAD213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
+				5B6B3AE6216FB47A0044E74C /* TypografServiceError.swift in Sources */,
 				5B8533BA213EE2CE00D67688 /* Bundle.swift in Sources */,
-				5BCF2BA8213ED0E200FCB293 /* TypografServiceType.swift in Sources */,
+				5BCF2BA8213ED0E200FCB293 /* TypografService.swift in Sources */,
+				5B6B3AE1216FB2AF0044E74C /* OperationToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,10 +427,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BCF2BA1213ECF3400FCB293 /* EntityType.swift in Sources */,
-				5BCF2B75213EBEE400FCB293 /* TypografService.swift in Sources */,
+				5B6B3ADA216FB24D0044E74C /* OperationResult.swift in Sources */,
+				5BCF2B75213EBEE400FCB293 /* ConcreteTypografService.swift in Sources */,
 				5BCF2BAB213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
+				5B6B3AE4216FB47A0044E74C /* TypografServiceError.swift in Sources */,
 				5B8533B8213EE2CE00D67688 /* Bundle.swift in Sources */,
-				5BCF2BA6213ED0E200FCB293 /* TypografServiceType.swift in Sources */,
+				5BCF2BA6213ED0E200FCB293 /* TypografService.swift in Sources */,
+				5B6B3ADF216FB2AF0044E74C /* OperationToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,12 +441,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B8533C5213EEDB300D67688 /* TypografService.swift in Sources */,
+				5B6B3AE2216FB2AF0044E74C /* OperationToken.swift in Sources */,
+				5B8533C5213EEDB300D67688 /* ConcreteTypografService.swift in Sources */,
 				5B8533C1213EEDB300D67688 /* EntityType.swift in Sources */,
+				5B6B3ADD216FB24D0044E74C /* OperationResult.swift in Sources */,
 				5B8533C3213EEDB300D67688 /* Bundle.swift in Sources */,
 				5B8533C2213EEDB300D67688 /* ProcessTextParameters.swift in Sources */,
 				5BCF2B7F213ECB2700FCB293 /* CocoaTypografTests.swift in Sources */,
-				5B8533C6213EEDB300D67688 /* TypografServiceType.swift in Sources */,
+				5B6B3AE7216FB47A0044E74C /* TypografServiceError.swift in Sources */,
+				5B8533C6213EEDB300D67688 /* TypografService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,12 +457,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B8533CB213EEDB400D67688 /* TypografService.swift in Sources */,
+				5B6B3AE0216FB2AF0044E74C /* OperationToken.swift in Sources */,
+				5B8533CB213EEDB400D67688 /* ConcreteTypografService.swift in Sources */,
 				5B8533C7213EEDB400D67688 /* EntityType.swift in Sources */,
+				5B6B3ADB216FB24D0044E74C /* OperationResult.swift in Sources */,
 				5B8533C9213EEDB400D67688 /* Bundle.swift in Sources */,
 				5B8533C8213EEDB400D67688 /* ProcessTextParameters.swift in Sources */,
 				5BCF2B9D213ECD1B00FCB293 /* CocoaTypografTests.swift in Sources */,
-				5B8533CC213EEDB400D67688 /* TypografServiceType.swift in Sources */,
+				5B6B3AE5216FB47A0044E74C /* TypografServiceError.swift in Sources */,
+				5B8533CC213EEDB400D67688 /* TypografService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
