@@ -10,6 +10,8 @@ import Foundation
 
 public final class ConcreteTypografService: TypografService {
 
+    public typealias CompletionHandler = (OperationResult<String, TypografServiceError>) -> Void
+
     // MARK: - Properties
 
     private var session: URLSession
@@ -32,11 +34,11 @@ public final class ConcreteTypografService: TypografService {
 
     @discardableResult
     public func processText(parameters: ProcessTextParameters,
-                            completion: @escaping (OperationResult<String, TypografServiceError>) -> Void) -> OperationToken {
-        var request = URLRequest(url: Constants.Request.url)
-        request.setValue(Constants.Request.contentType,
-                         forHTTPHeaderField: Constants.HeaderNames.contentType)
-        request.httpMethod = Constants.Request.httpMethod
+                            completion: @escaping CompletionHandler) -> OperationToken {
+        var request = URLRequest(url: RequestConstants.url)
+        request.setValue(RequestConstants.contentType,
+                         forHTTPHeaderField: HeaderNameConstants.contentType)
+        request.httpMethod = RequestConstants.httpMethod
 
         let bodyString = parameters.requestBodyText
         request.httpBody = bodyString.data(using: .utf8)
@@ -105,11 +107,15 @@ public final class ConcreteTypografService: TypografService {
             return nil
         }
 
-        guard let regex = try? NSRegularExpression(pattern: Constants.Response.regexPattern, options: []) else {
+        guard let regex = try? NSRegularExpression(pattern: ResponseConstants.regexPattern,
+                                                   options: []) else {
             return nil
         }
 
-        guard let match = regex.firstMatch(in: responseString, options: [], range: NSMakeRange(0, responseString.utf16.count)),
+        let wholeStringRange = NSRange(location: 0, length: responseString.utf16.count)
+        guard let match = regex.firstMatch(in: responseString,
+                                           options: [],
+                                           range: wholeStringRange),
             match.numberOfRanges == 2 else {
             return nil
         }
@@ -127,25 +133,21 @@ public final class ConcreteTypografService: TypografService {
 
 extension ConcreteTypografService {
 
-    fileprivate enum Constants {
+    fileprivate enum HeaderNameConstants {
+        static let contentType = "Content-Type"
+    }
 
-        fileprivate enum HeaderNames {
-            static let contentType = "Content-Type"
-        }
+    fileprivate enum RequestConstants {
+        static let contentType = "application/soap+xml; charset=utf-8"
+        static let httpMethod = "POST"
+        static let url = URL(string: "http://typograf.artlebedev.ru/webservices/typograf.asmx")!
+    }
 
-        fileprivate enum Request {
-            static let contentType = "application/soap+xml; charset=utf-8"
-            static let httpMethod = "POST"
-            static let url = URL(string: "http://typograf.artlebedev.ru/webservices/typograf.asmx")!
-        }
-
-        fileprivate enum Response {
-            static let regexPattern = NSLocalizedString("soap.response.processText.regex.text",
-                                                        tableName: "SOAP",
-                                                        bundle: Bundle.current,
-                                                        comment: "")
-        }
-
+    fileprivate enum ResponseConstants {
+        static let regexPattern = NSLocalizedString("soap.response.processText.regex.text",
+                                                    tableName: "SOAP",
+                                                    bundle: Bundle.current,
+                                                    comment: "")
     }
 
 }
