@@ -83,10 +83,22 @@ class CocoaTypografTests: XCTestCase {
 extension CocoaTypografTests {
 
     fileprivate enum Constants {
-        static let nbspSourceString = NSLocalizedString("test.nbsp.source", tableName: "Test", bundle: Bundle.current, comment: "")
-        static let nbspExpectedString = NSLocalizedString("test.nbsp.expected", tableName: "Test", bundle: Bundle.current, comment: "")
-        static let quotesSourceString = NSLocalizedString("test.quotes.source", tableName: "Test", bundle: Bundle.current, comment: "")
-        static let quotesExpectedString = NSLocalizedString("test.quotes.expected", tableName: "Test", bundle: Bundle.current, comment: "")
+        static let nbspSourceString = NSLocalizedString("test.nbsp.source",
+                                                        tableName: "Test",
+                                                        bundle: Bundle.current,
+                                                        comment: "")
+        static let nbspExpectedString = NSLocalizedString("test.nbsp.expected",
+                                                          tableName: "Test",
+                                                          bundle: Bundle.current,
+                                                          comment: "")
+        static let quotesSourceString = NSLocalizedString("test.quotes.source",
+                                                          tableName: "Test",
+                                                          bundle: Bundle.current,
+                                                          comment: "")
+        static let quotesExpectedString = NSLocalizedString("test.quotes.expected",
+                                                            tableName: "Test",
+                                                            bundle: Bundle.current,
+                                                            comment: "")
     }
 
 }
