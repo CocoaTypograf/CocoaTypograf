@@ -1,0 +1,29 @@
+language: swift
+os: osx
+osx_image: xcode10.2
+xcode_workspace: CocoaTypograf.xcworkspace
+
+before_install:
+  - brew cask install fastlane
+
+jobs:
+  include:
+    - stage: XCTest macOS
+      script:
+        - fastlane scan -s CocoaTypograf-macOS
+    - stage: XCTest iOS
+      script:
+        - fastlane scan -s CocoaTypograf-iOS
+    - stage: Build macOS (Debug)
+      script:
+        - fastlane gym -s CocoaTypograf-macOS -q Debug
+    - stage: Build macOS (Release)
+      script:
+        - fastlane gym -s CocoaTypograf-macOS -q Release
+    - stage: Build iOS (Debug)
+      script:
+        - fastlane gym -s CocoaTypograf-iOS -q Debug
+    - stage: Build iOS (Release)
+      script:
+        - fastlane gym -s CocoaTypograf-iOS -q Release
+
