@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B6B3ADA216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
-		5B6B3ADB216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
-		5B6B3ADC216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
-		5B6B3ADD216FB24D0044E74C /* OperationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AD9216FB24D0044E74C /* OperationResult.swift */; };
 		5B6B3ADF216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
 		5B6B3AE0216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
 		5B6B3AE1216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
@@ -71,7 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B6B3AD9216FB24D0044E74C /* OperationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationResult.swift; sourceTree = "<group>"; };
 		5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToken.swift; sourceTree = "<group>"; };
 		5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografServiceError.swift; sourceTree = "<group>"; };
 		5B8533B7213EE2CE00D67688 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -129,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */,
-				5B6B3AD9216FB24D0044E74C /* OperationResult.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -475,7 +469,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BCF2BA3213ECF3400FCB293 /* EntityType.swift in Sources */,
-				5B6B3ADC216FB24D0044E74C /* OperationResult.swift in Sources */,
 				5BCF2B76213EBEE400FCB293 /* ConcreteTypografService.swift in Sources */,
 				5BCF2BAD213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
 				5B6B3AE6216FB47A0044E74C /* TypografServiceError.swift in Sources */,
@@ -490,7 +483,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BCF2BA1213ECF3400FCB293 /* EntityType.swift in Sources */,
-				5B6B3ADA216FB24D0044E74C /* OperationResult.swift in Sources */,
 				5BCF2B75213EBEE400FCB293 /* ConcreteTypografService.swift in Sources */,
 				5BCF2BAB213ED3DF00FCB293 /* ProcessTextParameters.swift in Sources */,
 				5B6B3AE4216FB47A0044E74C /* TypografServiceError.swift in Sources */,
@@ -507,7 +499,6 @@
 				5B6B3AE2216FB2AF0044E74C /* OperationToken.swift in Sources */,
 				5B8533C5213EEDB300D67688 /* ConcreteTypografService.swift in Sources */,
 				5B8533C1213EEDB300D67688 /* EntityType.swift in Sources */,
-				5B6B3ADD216FB24D0044E74C /* OperationResult.swift in Sources */,
 				5B8533C3213EEDB300D67688 /* Bundle.swift in Sources */,
 				5B8533C2213EEDB300D67688 /* ProcessTextParameters.swift in Sources */,
 				5BCF2B7F213ECB2700FCB293 /* CocoaTypografTests.swift in Sources */,
@@ -523,7 +514,6 @@
 				5B6B3AE0216FB2AF0044E74C /* OperationToken.swift in Sources */,
 				5B8533CB213EEDB400D67688 /* ConcreteTypografService.swift in Sources */,
 				5B8533C7213EEDB400D67688 /* EntityType.swift in Sources */,
-				5B6B3ADB216FB24D0044E74C /* OperationResult.swift in Sources */,
 				5B8533C9213EEDB400D67688 /* Bundle.swift in Sources */,
 				5B8533C8213EEDB400D67688 /* ProcessTextParameters.swift in Sources */,
 				5BCF2B9D213ECD1B00FCB293 /* CocoaTypografTests.swift in Sources */,

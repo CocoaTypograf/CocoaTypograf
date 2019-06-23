@@ -10,10 +10,12 @@ import Foundation
 
 public protocol TypografService {
 
+    typealias CompletionHandler = (_ result: Result<String, TypografServiceError>) -> Void
+
     // MARK: - Methods
 
     @discardableResult
     func processText(parameters: ProcessTextParameters,
-                     completion: @escaping (OperationResult<String, TypografServiceError>) -> Void) -> OperationToken
+                     completion: @escaping (Result<String, TypografServiceError>) -> Void) -> OperationToken
 
 }

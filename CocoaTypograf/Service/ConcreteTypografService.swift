@@ -10,8 +10,6 @@ import Foundation
 
 public final class ConcreteTypografService: TypografService {
 
-    public typealias CompletionHandler = (OperationResult<String, TypografServiceError>) -> Void
-
     // MARK: - Properties
 
     private var session: URLSession
@@ -47,9 +45,7 @@ public final class ConcreteTypografService: TypografService {
             // check if there was an error
             if let error = error {
                 let code = (error as NSError).code
-                if code == NSURLErrorCancelled {
-                    completion(.cancelled)
-                } else {
+                if code != NSURLErrorCancelled {
                     completion(.failure(.responseError(error)))
                 }
                 return
