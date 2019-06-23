@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CocoaTypografTests: XCTestCase {
+final class CocoaTypografTests: XCTestCase {
 
     // MARK: - Properties
 
@@ -28,19 +28,30 @@ class CocoaTypografTests: XCTestCase {
         super.tearDown()
     }
 
-    // MARK: - Test methods
+}
+
+// MARK: - Test methods
+
+extension CocoaTypografTests {
 
     func testCancellation() {
-        let token = process(text: "") { responseText in
-            XCTAssertNil(responseText, "Operation wasn't cancelled")
+        let token = process(text: "") { _ in
+            XCTFail("Operation wasn't cancelled")
         }
         token.cancel()
+
+        let dispatchExpectation = expectation(description: "A dispatch expectation")
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.postCancellationDelay) {
+            dispatchExpectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
     }
 
     func testNbspProcessing() {
+        let responseExpectation = expectation(description: "Wait for response for text")
         process(text: Constants.nbspSourceString) { responseText in
+            responseExpectation.fulfill()
             XCTAssertEqual(Constants.nbspExpectedString, responseText)
         }
 
@@ -48,31 +59,32 @@ class CocoaTypografTests: XCTestCase {
     }
 
     func testQuotesProcessing() {
+        let responseExpectation = expectation(description: "Wait for response for text")
         process(text: Constants.quotesSourceString) { responseText in
+            responseExpectation.fulfill()
             XCTAssertEqual(Constants.quotesExpectedString, responseText)
         }
 
         waitForExpectations(timeout: timeout, handler: nil)
     }
 
-    // MARK: - Private methods
+}
+
+// MARK: - Private methods
+
+extension CocoaTypografTests {
 
     @discardableResult
     private func process(text: String,
-                         completion: @escaping (String?) -> Void) -> OperationToken {
-        let responseExpectation = expectation(description: "Wait for response for text \"\(text)\"")
-
+                         completion: @escaping (String) -> Void) -> OperationToken {
         let params = ProcessTextParameters(text: text)
         return service.processText(parameters: params) { result in
             switch result {
-            case .cancelled:
-                completion(nil)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             case .success(let text):
                 completion(text)
             }
-            responseExpectation.fulfill()
         }
     }
 
@@ -99,6 +111,7 @@ extension CocoaTypografTests {
                                                             tableName: "Test",
                                                             bundle: Bundle.current,
                                                             comment: "")
+        static let postCancellationDelay: TimeInterval = 1.0
     }
 
 }
