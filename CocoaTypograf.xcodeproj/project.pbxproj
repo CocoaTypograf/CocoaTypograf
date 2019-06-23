@@ -67,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B4917D422BFCF4100F4DAC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToken.swift; sourceTree = "<group>"; };
 		5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografServiceError.swift; sourceTree = "<group>"; };
 		5B8533B7213EE2CE00D67688 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 				5BCF2B5D213EB79C00FCB293 /* CocoaTypograf */,
 				5BCF2B7D213ECB2700FCB293 /* CocoaTypografTests */,
 				5BCF2B5C213EB79C00FCB293 /* Products */,
+				5B4917D422BFCF4100F4DAC8 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
