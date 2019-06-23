@@ -13,14 +13,17 @@ final class CocoaTypografTests: XCTestCase {
     // MARK: - Properties
 
     var service: TypografService!
-    let timeout: TimeInterval = 30.0
 
     // MARK: - Lifecycle
 
     override func setUp() {
         super.setUp()
 
-        service = ConcreteTypografService()
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = Constants.timeout
+        sessionConfig.timeoutIntervalForResource = Constants.timeout
+        let session = URLSession(configuration: sessionConfig)
+        service = ConcreteTypografService(session: session)
     }
 
     override func tearDown() {
@@ -41,11 +44,14 @@ extension CocoaTypografTests {
         token.cancel()
 
         let dispatchExpectation = expectation(description: "A dispatch expectation")
-        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.postCancellationDelay) {
-            dispatchExpectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now()
+            + Constants.timeout
+            + Constants.postTimeoutExpectationFulfillingDelay) {
+                dispatchExpectation.fulfill()
         }
 
-        waitForExpectations(timeout: timeout, handler: nil)
+        waitForExpectations(timeout: Constants.timeout + Constants.postTimeoutCancellationAwaitingDelay,
+                            handler: nil)
     }
 
     func testNbspProcessing() {
@@ -55,7 +61,7 @@ extension CocoaTypografTests {
             XCTAssertEqual(Constants.nbspExpectedString, responseText)
         }
 
-        waitForExpectations(timeout: timeout, handler: nil)
+        waitForExpectations(timeout: Constants.timeout, handler: nil)
     }
 
     func testQuotesProcessing() {
@@ -65,7 +71,7 @@ extension CocoaTypografTests {
             XCTAssertEqual(Constants.quotesExpectedString, responseText)
         }
 
-        waitForExpectations(timeout: timeout, handler: nil)
+        waitForExpectations(timeout: Constants.timeout, handler: nil)
     }
 
 }
@@ -95,6 +101,7 @@ extension CocoaTypografTests {
 extension CocoaTypografTests {
 
     fileprivate enum Constants {
+
         static let nbspSourceString = NSLocalizedString("test.nbsp.source",
                                                         tableName: "Test",
                                                         bundle: Bundle.current,
@@ -111,7 +118,11 @@ extension CocoaTypografTests {
                                                             tableName: "Test",
                                                             bundle: Bundle.current,
                                                             comment: "")
-        static let postCancellationDelay: TimeInterval = 1.0
+
+        static let postTimeoutCancellationAwaitingDelay: TimeInterval = 0.25
+        static let postTimeoutExpectationFulfillingDelay: TimeInterval = 0.125
+        static let timeout: TimeInterval = 5.0
+
     }
 
 }
