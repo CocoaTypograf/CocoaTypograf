@@ -38,7 +38,7 @@ final class CocoaTypografTests: XCTestCase {
 extension CocoaTypografTests {
 
     func testCancellation() {
-        let token = process(text: "") { _ in
+        var token = process(text: "") { _ in
             XCTFail("Operation wasn't cancelled")
         }
         token.cancel()

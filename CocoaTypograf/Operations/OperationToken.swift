@@ -8,29 +8,36 @@
 
 import Foundation
 
-public final class OperationToken {
+public struct OperationToken {
 
     // MARK: - Properties
 
-    private let cancellation: (() -> Void)?
+    /// An associated cancellation closure.
+    private let cancellation: () -> Void
 
+    /// Indicates whether the token was already cancelled.
     private(set) var isCancelled: Bool = false {
         didSet {
             if !oldValue && isCancelled {
-                cancellation?()
+                cancellation()
             }
         }
     }
 
     // MARK: - Initializers
 
-    init(cancellation: (() -> Void)? = nil) {
+    /// Initializes a new operation token with a given cancellation closure.
+    /// - Parameter cancellation: A cancellation closure to be associeted with the token.
+    /// Called once after the token is cancelled
+    init(cancellation: @escaping () -> Void) {
         self.cancellation = cancellation
     }
 
     // MARK: - Public methods
 
-    public func cancel() {
+    /// Cancels an associated operation by calling
+    /// an initially passed cancellation closure.
+    public mutating func cancel() {
         isCancelled = true
     }
 
