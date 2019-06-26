@@ -12,7 +12,7 @@ public final class ConcreteTypografService {
 
     // MARK: - Properties
 
-    private var session: URLSession
+    private let session: URLSession
 
     // MARK: - Initializers
 
