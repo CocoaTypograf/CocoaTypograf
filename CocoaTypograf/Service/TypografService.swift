@@ -17,6 +17,6 @@ public protocol TypografService {
     @discardableResult
     func process(text: String,
                  parameters: ProcessTextParameters,
-                 completion: @escaping CompletionHandler) -> OperationToken
+                 completion: @escaping CompletionHandler) -> CancellationToken
 
 }

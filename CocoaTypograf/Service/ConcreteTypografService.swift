@@ -37,7 +37,7 @@ extension ConcreteTypografService: TypografService {
     @discardableResult
     public func process(text: String,
                         parameters: ProcessTextParameters,
-                        completion: @escaping CompletionHandler) -> OperationToken {
+                        completion: @escaping CompletionHandler) -> CancellationToken {
         var request = URLRequest(url: RequestConstants.url)
         request.setValue(RequestConstants.contentType,
                          forHTTPHeaderField: HeaderNameConstants.contentType)
@@ -94,7 +94,7 @@ extension ConcreteTypografService: TypografService {
 
         task.resume()
 
-        return OperationToken {
+        return CancellationToken {
             task.cancel()
         }
     }

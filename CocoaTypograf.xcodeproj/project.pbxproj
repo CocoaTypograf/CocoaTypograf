@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B6B3ADF216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
-		5B6B3AE0216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
-		5B6B3AE1216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
-		5B6B3AE2216FB2AF0044E74C /* OperationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */; };
+		5B6B3ADF216FB2AF0044E74C /* CancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* CancellationToken.swift */; };
+		5B6B3AE0216FB2AF0044E74C /* CancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* CancellationToken.swift */; };
+		5B6B3AE1216FB2AF0044E74C /* CancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* CancellationToken.swift */; };
+		5B6B3AE2216FB2AF0044E74C /* CancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3ADE216FB2AF0044E74C /* CancellationToken.swift */; };
 		5B6B3AE4216FB47A0044E74C /* TypografServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */; };
 		5B6B3AE5216FB47A0044E74C /* TypografServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */; };
 		5B6B3AE6216FB47A0044E74C /* TypografServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */; };
@@ -68,7 +68,7 @@
 
 /* Begin PBXFileReference section */
 		5B4917D422BFCF4100F4DAC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationToken.swift; sourceTree = "<group>"; };
+		5B6B3ADE216FB2AF0044E74C /* CancellationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationToken.swift; sourceTree = "<group>"; };
 		5B6B3AE3216FB47A0044E74C /* TypografServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypografServiceError.swift; sourceTree = "<group>"; };
 		5B8533B7213EE2CE00D67688 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		5B8533BE213EE9B000D67688 /* Test.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Test.strings; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		5B6B3AD8216FB2360044E74C /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				5B6B3ADE216FB2AF0044E74C /* OperationToken.swift */,
+				5B6B3ADE216FB2AF0044E74C /* CancellationToken.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 				5B6B3AE6216FB47A0044E74C /* TypografServiceError.swift in Sources */,
 				5B8533BA213EE2CE00D67688 /* Bundle.swift in Sources */,
 				5BCF2BA8213ED0E200FCB293 /* TypografService.swift in Sources */,
-				5B6B3AE1216FB2AF0044E74C /* OperationToken.swift in Sources */,
+				5B6B3AE1216FB2AF0044E74C /* CancellationToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +490,7 @@
 				5B6B3AE4216FB47A0044E74C /* TypografServiceError.swift in Sources */,
 				5B8533B8213EE2CE00D67688 /* Bundle.swift in Sources */,
 				5BCF2BA6213ED0E200FCB293 /* TypografService.swift in Sources */,
-				5B6B3ADF216FB2AF0044E74C /* OperationToken.swift in Sources */,
+				5B6B3ADF216FB2AF0044E74C /* CancellationToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,7 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B6B3AE2216FB2AF0044E74C /* OperationToken.swift in Sources */,
+				5B6B3AE2216FB2AF0044E74C /* CancellationToken.swift in Sources */,
 				5B8533C5213EEDB300D67688 /* ConcreteTypografService.swift in Sources */,
 				5B8533C1213EEDB300D67688 /* EntityType.swift in Sources */,
 				5B8533C3213EEDB300D67688 /* Bundle.swift in Sources */,
@@ -513,7 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B6B3AE0216FB2AF0044E74C /* OperationToken.swift in Sources */,
+				5B6B3AE0216FB2AF0044E74C /* CancellationToken.swift in Sources */,
 				5B8533CB213EEDB400D67688 /* ConcreteTypografService.swift in Sources */,
 				5B8533C7213EEDB400D67688 /* EntityType.swift in Sources */,
 				5B8533C9213EEDB400D67688 /* Bundle.swift in Sources */,

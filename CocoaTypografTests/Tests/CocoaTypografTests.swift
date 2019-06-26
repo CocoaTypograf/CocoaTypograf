@@ -83,7 +83,7 @@ extension CocoaTypografTests {
 
     @discardableResult
     private func process(text: String,
-                         completion: @escaping (String) -> Void) -> OperationToken {
+                         completion: @escaping (String) -> Void) -> CancellationToken {
         return service.process(text: text, parameters: .init()) { result in
             switch result {
             case .failure(let error):
