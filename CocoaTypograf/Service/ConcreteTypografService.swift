@@ -8,11 +8,11 @@
 
 import Foundation
 
-public final class ConcreteTypografService: TypografService {
+public final class ConcreteTypografService {
 
     // MARK: - Properties
 
-    private var session: URLSession
+    private let session: URLSession
 
     // MARK: - Initializers
 
@@ -28,18 +28,21 @@ public final class ConcreteTypografService: TypografService {
         session.invalidateAndCancel()
     }
 
-    // MARK: - Public methods
+}
+
+// MARK: - TypografService
+
+extension ConcreteTypografService: TypografService {
 
     @discardableResult
-    public func processText(parameters: ProcessTextParameters,
-                            completion: @escaping CompletionHandler) -> OperationToken {
+    public func process(text: String,
+                        parameters: ProcessTextParameters,
+                        completion: @escaping CompletionHandler) -> CancellationToken {
         var request = URLRequest(url: RequestConstants.url)
         request.setValue(RequestConstants.contentType,
                          forHTTPHeaderField: HeaderNameConstants.contentType)
         request.httpMethod = RequestConstants.httpMethod
-
-        let bodyString = parameters.requestBodyText
-        request.httpBody = bodyString.data(using: .utf8)
+        request.httpBody = parameters.requestBody(text: text).data(using: .utf8)
 
         let task = session.dataTask(with: request) { [weak self] (data, response, error) in
             // check if there was an error
@@ -91,12 +94,16 @@ public final class ConcreteTypografService: TypografService {
 
         task.resume()
 
-        return OperationToken {
+        return CancellationToken {
             task.cancel()
         }
     }
 
-    // MARK: - Private methods
+}
+
+// MARK: - Private methods
+
+extension ConcreteTypografService {
 
     private func parseTextFromResponse(data: Data, encoding: String.Encoding) -> String? {
         guard let responseString = String(data: data, encoding: encoding) else {

@@ -13,14 +13,17 @@ final class CocoaTypografTests: XCTestCase {
     // MARK: - Properties
 
     var service: TypografService!
-    let timeout: TimeInterval = 30.0
 
     // MARK: - Lifecycle
 
     override func setUp() {
         super.setUp()
 
-        service = ConcreteTypografService()
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = Constants.timeout
+        sessionConfig.timeoutIntervalForResource = Constants.timeout
+        let session = URLSession(configuration: sessionConfig)
+        service = ConcreteTypografService(session: session)
     }
 
     override func tearDown() {
@@ -35,17 +38,21 @@ final class CocoaTypografTests: XCTestCase {
 extension CocoaTypografTests {
 
     func testCancellation() {
-        let token = process(text: "") { _ in
+        let completion: (String) -> Void = { _ in
             XCTFail("Operation wasn't cancelled")
         }
+        var token = process(text: "", completion: completion)
         token.cancel()
 
         let dispatchExpectation = expectation(description: "A dispatch expectation")
-        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.postCancellationDelay) {
-            dispatchExpectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now()
+            + Constants.timeout
+            + Constants.postTimeoutExpectationFulfillingDelay) {
+                dispatchExpectation.fulfill()
         }
 
-        waitForExpectations(timeout: timeout, handler: nil)
+        waitForExpectations(timeout: Constants.timeout + Constants.postTimeoutCancellationAwaitingDelay,
+                            handler: nil)
     }
 
     func testNbspProcessing() {
@@ -55,7 +62,7 @@ extension CocoaTypografTests {
             XCTAssertEqual(Constants.nbspExpectedString, responseText)
         }
 
-        waitForExpectations(timeout: timeout, handler: nil)
+        waitForExpectations(timeout: Constants.timeout, handler: nil)
     }
 
     func testQuotesProcessing() {
@@ -65,7 +72,7 @@ extension CocoaTypografTests {
             XCTAssertEqual(Constants.quotesExpectedString, responseText)
         }
 
-        waitForExpectations(timeout: timeout, handler: nil)
+        waitForExpectations(timeout: Constants.timeout, handler: nil)
     }
 
 }
@@ -76,9 +83,8 @@ extension CocoaTypografTests {
 
     @discardableResult
     private func process(text: String,
-                         completion: @escaping (String) -> Void) -> OperationToken {
-        let params = ProcessTextParameters(text: text)
-        return service.processText(parameters: params) { result in
+                         completion: @escaping (String) -> Void) -> CancellationToken {
+        return service.process(text: text, parameters: .init()) { result in
             switch result {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
@@ -95,6 +101,7 @@ extension CocoaTypografTests {
 extension CocoaTypografTests {
 
     fileprivate enum Constants {
+
         static let nbspSourceString = NSLocalizedString("test.nbsp.source",
                                                         tableName: "Test",
                                                         bundle: Bundle.current,
@@ -111,7 +118,11 @@ extension CocoaTypografTests {
                                                             tableName: "Test",
                                                             bundle: Bundle.current,
                                                             comment: "")
-        static let postCancellationDelay: TimeInterval = 1.0
+
+        static let postTimeoutCancellationAwaitingDelay: TimeInterval = 0.25
+        static let postTimeoutExpectationFulfillingDelay: TimeInterval = 0.125
+        static let timeout: TimeInterval = 5.0
+
     }
 
 }
