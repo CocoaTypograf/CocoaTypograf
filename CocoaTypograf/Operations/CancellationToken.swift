@@ -27,9 +27,9 @@ public struct CancellationToken {
 
     // MARK: - Initializers
 
-    /// Initializes a new operation token with a given cancellation closure.
+    /// Initializes a new cancellation token with a given cancellation closure.
     /// - Parameter cancellation: A cancellation closure to be associeted with the token.
-    /// Called once after the token is cancelled
+    /// Called once after the token is cancelled.
     init(cancellation: @escaping () -> Void) {
         self.cancellation = cancellation
     }

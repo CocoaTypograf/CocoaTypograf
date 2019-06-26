@@ -11,7 +11,9 @@ import Foundation
 /// A protocol describing a typograf service.
 public protocol TypografService {
 
-    /// A handler for an processing a result of processed text or a failure.
+    /// A closure for handling a result of a text processing.
+    ///
+    /// The result might be a success or a failure.
     /// - Parameter result: A result of a text processing operation.
     typealias CompletionHandler = (_ result: Result<String, TypografServiceError>) -> Void
 
