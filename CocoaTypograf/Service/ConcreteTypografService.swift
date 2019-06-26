@@ -35,15 +35,14 @@ public final class ConcreteTypografService {
 extension ConcreteTypografService: TypografService {
 
     @discardableResult
-    public func processText(parameters: ProcessTextParameters,
-                            completion: @escaping CompletionHandler) -> OperationToken {
+    public func process(text: String,
+                        parameters: ProcessTextParameters,
+                        completion: @escaping CompletionHandler) -> OperationToken {
         var request = URLRequest(url: RequestConstants.url)
         request.setValue(RequestConstants.contentType,
                          forHTTPHeaderField: HeaderNameConstants.contentType)
         request.httpMethod = RequestConstants.httpMethod
-
-        let bodyString = parameters.requestBodyText
-        request.httpBody = bodyString.data(using: .utf8)
+        request.httpBody = parameters.requestBody(text: text).data(using: .utf8)
 
         let task = session.dataTask(with: request) { [weak self] (data, response, error) in
             // check if there was an error

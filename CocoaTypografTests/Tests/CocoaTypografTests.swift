@@ -38,9 +38,10 @@ final class CocoaTypografTests: XCTestCase {
 extension CocoaTypografTests {
 
     func testCancellation() {
-        var token = process(text: "") { _ in
+        let completion: (String) -> Void = { _ in
             XCTFail("Operation wasn't cancelled")
         }
+        var token = process(text: "", completion: completion)
         token.cancel()
 
         let dispatchExpectation = expectation(description: "A dispatch expectation")
@@ -83,8 +84,7 @@ extension CocoaTypografTests {
     @discardableResult
     private func process(text: String,
                          completion: @escaping (String) -> Void) -> OperationToken {
-        let params = ProcessTextParameters(text: text)
-        return service.processText(parameters: params) { result in
+        return service.process(text: text, parameters: .init()) { result in
             switch result {
             case .failure(let error):
                 XCTFail(error.localizedDescription)

@@ -14,19 +14,16 @@ public struct ProcessTextParameters {
 
     let entityType: EntityType
     let maxNonBreakingSpaces: UInt
-    let text: String
     let useBreakLineTags: Bool
     let useParagraphTags: Bool
 
     // MARK: - Initializers
 
-    init(text: String,
-         entityType: EntityType = .none,
+    init(entityType: EntityType = .none,
          maxNonBreakingSpaces: UInt = 0,
          useBreakLineTags: Bool = false,
          useParagraphTags: Bool = false) {
         self.entityType = entityType
-        self.text = text
         self.maxNonBreakingSpaces = maxNonBreakingSpaces
         self.useBreakLineTags = useBreakLineTags
         self.useParagraphTags = useParagraphTags
@@ -51,7 +48,7 @@ extension ProcessTextParameters {
 
 extension ProcessTextParameters {
 
-    var requestBodyText: String {
+    func requestBody(text: String) -> String {
         return String(format: Constants.bodyFormatString,
                       text,
                       entityType.rawValue,

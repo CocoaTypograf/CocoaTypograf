@@ -15,7 +15,8 @@ public protocol TypografService {
     // MARK: - Methods
 
     @discardableResult
-    func processText(parameters: ProcessTextParameters,
-                     completion: @escaping (Result<String, TypografServiceError>) -> Void) -> OperationToken
+    func process(text: String,
+                 parameters: ProcessTextParameters,
+                 completion: @escaping CompletionHandler) -> OperationToken
 
 }
