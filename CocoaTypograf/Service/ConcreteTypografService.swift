@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class ConcreteTypografService: TypografService {
+public final class ConcreteTypografService {
 
     // MARK: - Properties
 
@@ -28,7 +28,11 @@ public final class ConcreteTypografService: TypografService {
         session.invalidateAndCancel()
     }
 
-    // MARK: - Public methods
+}
+
+// MARK: - TypografService
+
+extension ConcreteTypografService: TypografService {
 
     @discardableResult
     public func processText(parameters: ProcessTextParameters,
@@ -96,7 +100,11 @@ public final class ConcreteTypografService: TypografService {
         }
     }
 
-    // MARK: - Private methods
+}
+
+// MARK: - Private methods
+
+extension ConcreteTypografService {
 
     private func parseTextFromResponse(data: Data, encoding: String.Encoding) -> String? {
         guard let responseString = String(data: data, encoding: encoding) else {
