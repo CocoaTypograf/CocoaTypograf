@@ -13,6 +13,7 @@ extension Bundle {
     @objc fileprivate final class _BundleAnchor: NSObject {
     }
 
+    /// Returns a current bundle.
     static var current: Bundle {
         return Bundle(for: _BundleAnchor.self)
     }
