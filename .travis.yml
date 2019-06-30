@@ -1,29 +1,57 @@
 language: swift
 os: osx
-osx_image: xcode10.2
-xcode_workspace: CocoaTypograf.xcworkspace
+osx_image: xcode11
 
-before_install:
-  - brew cask install fastlane
+# ------
+# ADDONS
+# ------
+
+addons:
+  homebrew:
+    packages:
+    - swiftlint
+    update: true
+
+# ----
+# JOBS
+# ----
 
 jobs:
   include:
-    - stage: XCTest macOS
+    - stage: build_release
+      name: Build frameworks and XCFramework
       script:
-        - fastlane scan -s CocoaTypograf-macOS
-    - stage: XCTest iOS
-      script:
-        - fastlane scan -s CocoaTypograf-iOS
-    - stage: Build macOS (Debug)
-      script:
-        - fastlane gym -s CocoaTypograf-macOS -q Debug
-    - stage: Build macOS (Release)
-      script:
-        - fastlane gym -s CocoaTypograf-macOS -q Release
-    - stage: Build iOS (Debug)
-      script:
-        - fastlane gym -s CocoaTypograf-iOS -q Debug
-    - stage: Build iOS (Release)
-      script:
-        - fastlane gym -s CocoaTypograf-iOS -q Release
+        - >
+          xcodebuild archive \
+            -scheme CocoaTypograf-iOS \
+            -archivePath ./build/ios/ios.xcarchive\
+            -sdk iphoneos \
+            SKIP_INSTALL=NO | xcpretty
+        - >
+          xcodebuild archive \
+            -scheme CocoaTypograf-iOS \
+            -archivePath ./build/ios/ios_sim.xcarchive \
+            -sdk iphonesimulator \
+            SKIP_INSTALL=NO | xcpretty
+        - >
+          xcodebuild archive \
+            -scheme CocoaTypograf-macOS \
+            -archivePath ./build/macos/macos.xcarchive \
+            SKIP_INSTALL=NO | xcpretty
+        - >
+          xcodebuild -create-xcframework \
+            -framework ./build/ios/ios.xcarchive/Products/Library/Frameworks/CocoaTypograf.framework \
+            -framework ./build/ios/ios_sim.xcarchive/Products/Library/Frameworks/CocoaTypograf.framework \
+            -framework ./build/macos/macos.xcarchive/Products/Library/Frameworks/CocoaTypograf.framework \
+            -output ./build/CocoaTypograf.xcframework | xcpretty
+
+# ------
+# STAGES
+# ------
+
+stages:
+  - name: create_release
+    if: branch = develop
+  - name: build_release
+    if: tag =~ /^\d+\.\d+\.\d+?/
 
