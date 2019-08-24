@@ -1,0 +1,166 @@
+variables:
+  ARCHIVE_PATH_IOS: "/build/ios/ios.xcarchive"
+  ARCHIVE_PATH_IOS_SIMULATOR: "/build/ios/ios_sim.xcarchive"
+  ARCHIVE_PATH_MACOS: "/build/macos/macos.xcarchive"
+  CACHES_PATH: "/caches"
+  CACHES_PATH_BUILD_JOB_ID: "${CACHES_PATH}/build_job_id"
+  FRAMEWORK_NAME: "CocoaTypograf"
+  PRODUCT_NAME: "Cocoa Typograf"
+  GIT_SUBMODULE_STRATEGY: recursive
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+  XCFRAMEWORK_PATH: "/build/${FRAMEWORK_NAME}.xcframework"
+  XCFRAMEWORK_ARCHIVE_PATH: "/build/${FRAMEWORK_NAME}.zip"
+
+
+cache:
+  paths:
+    - "${CI_PROJECT_DIR}${CACHES_PATH}"
+
+
+stages:
+  - make_release
+  - build
+  - finish_release
+  - clean_up
+
+
+# ------------------
+# Make a new release
+# ------------------
+
+release:
+  dependencies: []
+  stage: make_release
+  script:
+    - >
+      ${CI_PROJECT_DIR}/scripts/make_release.sh \
+        -l "${GIT_LOGIN}" \
+        -k "${GIT_AUTH_KEY}" \
+        -h "${GIT_HOST}" \
+        -p "${GIT_PROJECT_PATH}" \
+        -a "${GIT_COMMIT_AUTHOR_NAME}" \
+        -e "${GIT_COMMIT_AUTHOR_EMAIL}"
+  tags:
+    - xcode11_beta
+  only:
+    - develop
+  when: manual
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^Merge tag.*?/
+
+
+# ---------------
+# Build a release
+# ---------------
+
+build:
+  stage: build
+  script:
+    - >
+      xcodebuild archive \
+        -scheme CocoaTypograf-iOS \
+        -archivePath "${CI_PROJECT_DIR}${ARCHIVE_PATH_IOS}" \
+        -sdk iphoneos \
+        SKIP_INSTALL=NO | xcpretty
+    - >
+      xcodebuild archive \
+        -scheme CocoaTypograf-iOS \
+        -archivePath "${CI_PROJECT_DIR}${ARCHIVE_PATH_IOS_SIMULATOR}" \
+        -sdk iphonesimulator \
+        SKIP_INSTALL=NO | xcpretty
+    - >
+      xcodebuild archive \
+        -scheme CocoaTypograf-macOS \
+        -archivePath "${CI_PROJECT_DIR}${ARCHIVE_PATH_MACOS}" \
+        SKIP_INSTALL=NO | xcpretty
+    - >
+      xcodebuild -create-xcframework \
+        -framework "${CI_PROJECT_DIR}${ARCHIVE_PATH_IOS}/Products/Library/Frameworks/CocoaTypograf.framework" \
+        -framework "${CI_PROJECT_DIR}${ARCHIVE_PATH_IOS_SIMULATOR}/Products/Library/Frameworks/CocoaTypograf.framework" \
+        -framework "${CI_PROJECT_DIR}${ARCHIVE_PATH_MACOS}/Products/Library/Frameworks/CocoaTypograf.framework" \
+        -output "${CI_PROJECT_DIR}${XCFRAMEWORK_PATH}" | xcpretty
+    - mkdir -p "${CI_PROJECT_DIR}${CACHES_PATH}"
+    - echo "${CI_JOB_ID}" > "${CI_PROJECT_DIR}${CACHES_PATH_BUILD_JOB_ID}"
+  artifacts:
+    paths:
+      - "${CI_PROJECT_DIR}${XCFRAMEWORK_PATH}"
+  tags:
+    - xcode11_beta
+  only:
+    - /^\d+\.\d+\.\d+?/
+  except:
+    - branches
+
+
+# ------------------
+# Finishing releases
+# ------------------
+
+finish_release:gitlab:
+  stage: finish_release
+  script:
+    - export BUILD_JOB_ID=`cat "${CI_PROJECT_DIR}${CACHES_PATH_BUILD_JOB_ID}"`
+    - echo "BUILD_JOB_ID is ${BUILD_JOB_ID}"
+    - >
+      ${CI_PROJECT_DIR}/scripts/gitlab_release.sh \
+        -h "${CI_SERVER_HOST}" \
+        -k "${CI_GITLAB_API_KEY}" \
+        -p "${CI_PROJECT_ID}" \
+        -r "${CI_PROJECT_PATH}" \
+        -t "${CI_COMMIT_TAG}" \
+        -i "${PRODUCT_NAME} v${CI_COMMIT_TAG}" \
+        -j "${BUILD_JOB_ID}" \
+        -d "Binary Framework v${CI_COMMIT_TAG}"
+  dependencies:
+    - build
+  tags:
+    - xcode11_beta
+  only:
+    - /^\d+\.\d+\.\d+?/
+  except:
+    - branches
+
+finish_release:github:
+  stage: finish_release
+  script:
+    - cd `dirname ${CI_PROJECT_DIR}${XCFRAMEWORK_PATH}`
+    - zip -r "${CI_PROJECT_DIR}${XCFRAMEWORK_ARCHIVE_PATH}" `basename ${XCFRAMEWORK_PATH}`
+    - cd -
+    - >
+      ${CI_PROJECT_DIR}/scripts/github_release.sh \
+        -k "${CI_GITHUB_API_KEY}" \
+        -r "${GIT_PROJECT_PATH}" \
+        -t "${CI_COMMIT_TAG}" \
+        -i "${PRODUCT_NAME} v${CI_COMMIT_TAG}" \
+        -a "${CI_PROJECT_DIR}${XCFRAMEWORK_ARCHIVE_PATH}" \
+        -d "Binary Framework v${CI_COMMIT_TAG}"
+
+  dependencies:
+    - build
+  tags:
+    - xcode11_beta
+  only:
+    - /^\d+\.\d+\.\d+?/
+  except:
+    - branches
+
+
+# ---------------
+# Clean Up Caches
+# ---------------
+
+clean_up:caches:
+  stage: clean_up
+  allow_failure: true
+  script:
+    - rm -rf "${CI_PROJECT_DIR}${CACHES_PATH}"
+  tags:
+    - xcode11_beta
+  only:
+    - /^\d+\.\d+\.\d+?/
+  except:
+    - branches
+  dependencies:
+    - finish_release:gitlab
