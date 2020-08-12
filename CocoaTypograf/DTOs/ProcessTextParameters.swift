@@ -83,8 +83,8 @@ extension ProcessTextParameters {
                       text,
                       entityType.rawValue,
                       maxNonBreakingSpaces,
-                      useBreakLineTags ? "true" : "false",
-                      useParagraphTags ? "true" : "false")
+                      "\(useBreakLineTags)",
+                      "\(useParagraphTags)")
     }
 
 }
