@@ -119,7 +119,7 @@ extension ConcreteTypografService {
         guard let match = regex.firstMatch(in: responseString,
                                            options: [],
                                            range: wholeStringRange),
-            match.numberOfRanges == 2 else {
+              match.numberOfRanges == ResponseConstants.regexNumberOfRanges else {
             return nil
         }
 
@@ -147,6 +147,7 @@ extension ConcreteTypografService {
     }
 
     fileprivate enum ResponseConstants {
+        static let regexNumberOfRanges = 2
         static let regexPattern = "<ProcessTextResult.*?>([\\s\\S]*?)\\n?<\\/ProcessTextResult.*?>"
     }
 
