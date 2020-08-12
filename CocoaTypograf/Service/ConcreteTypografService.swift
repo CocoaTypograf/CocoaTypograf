@@ -147,10 +147,7 @@ extension ConcreteTypografService {
     }
 
     fileprivate enum ResponseConstants {
-        static let regexPattern = NSLocalizedString("soap.response.processText.regex.text",
-                                                    tableName: "SOAP",
-                                                    bundle: Bundle.current,
-                                                    comment: "")
+        static let regexPattern = "<ProcessTextResult.*?>([\\s\\S]*?)\\n?<\\/ProcessTextResult.*?>"
     }
 
 }

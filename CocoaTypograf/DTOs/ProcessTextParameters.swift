@@ -52,10 +52,21 @@ public struct ProcessTextParameters {
 extension ProcessTextParameters {
 
     fileprivate enum Constants {
-        static let bodyFormatString = NSLocalizedString("soap.request.processText.format",
-                                                        tableName: "SOAP",
-                                                        bundle: Bundle.current,
-                                                        comment: "")
+        static let bodyFormatString = """
+<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'>
+    <soapenv:Header>
+    </soapenv:Header>
+    <soapenv:Body>
+        <tns:ProcessText xmlns:tns='http://typograf.artlebedev.ru/webservices/'>
+            <tns:text>%@</tns:text>
+            <tns:entityType>%d</tns:entityType>
+            <tns:maxNobr>%u</tns:maxNobr>
+            <tns:useBr>%@</tns:useBr>
+            <tns:useP>%@</tns:useP>
+        </tns:ProcessText>
+    </soapenv:Body>
+</soapenv:Envelope>
+"""
     }
 
 }
