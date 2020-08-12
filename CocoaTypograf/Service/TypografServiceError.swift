@@ -12,7 +12,10 @@ import Foundation
 public enum TypografServiceError: Error {
 
     /// A typograf service response data is invalid.
-    case invalidResponseData
+    ///
+    /// - data: A response data, if available.
+    /// - response: An actual response.
+    case invalidResponse(data: Data?, response: HTTPURLResponse)
 
     /// A response error.
     case responseError(Error)

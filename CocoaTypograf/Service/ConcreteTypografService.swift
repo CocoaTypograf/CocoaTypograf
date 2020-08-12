@@ -60,7 +60,7 @@ extension ConcreteTypografService: TypografService {
 
             // attempt to get the response text
             guard let responseText = data.flatMap({ httpResponse.typografResponseText(from: $0) }) else {
-                completion(.failure(.invalidResponseData))
+                completion(.failure(.invalidResponse(data: data, response: httpResponse)))
                 return
             }
 
