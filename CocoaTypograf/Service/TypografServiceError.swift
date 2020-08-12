@@ -8,8 +8,48 @@
 
 import Foundation
 
+/// A typograf service error.
 public enum TypografServiceError: Error {
+
+    /// A typograf service response data is invalid.
+    ///
+    /// - data: A response data, if available.
+    /// - response: An actual response.
+    case invalidResponse(data: Data?, response: HTTPURLResponse)
+
+    /// A response error.
     case responseError(Error)
-    case invalidResponseData
+
+    /// A typograf service is unavailable for some reason.
     case serviceUnavailable
+
+}
+
+// MARK: - CustomNSError
+
+extension TypografServiceError: CustomNSError {
+
+    public var errorUserInfo: [String: Any] {
+        var result: [String: Any] = [:]
+        if let underlyingError = underlyingError {
+            result[NSUnderlyingErrorKey] = underlyingError
+        }
+        return result
+    }
+
+}
+
+// MARK: - Private methods and properties
+
+fileprivate extension TypografServiceError {
+
+    var underlyingError: Error? {
+        switch self {
+        case .responseError(let error):
+            return error
+        default:
+            return nil
+        }
+    }
+
 }
