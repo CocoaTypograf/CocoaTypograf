@@ -40,7 +40,7 @@ extension ConcreteTypografService: TypografService {
                         completion: @escaping CompletionHandler) -> CancellationToken {
         let request = URLRequest(text: text, parameters: parameters)
 
-        let task = session.dataTask(with: request) { [weak self] (data, response, error) in
+        let task = session.dataTask(with: request) { data, response, error in
             // check if there was an error
             if let error = error {
                 let code = (error as NSError).code
@@ -51,36 +51,15 @@ extension ConcreteTypografService: TypografService {
             }
 
             // ensure request is present and has a proper type
-            guard let httpResponse = response as? HTTPURLResponse else {
+            // and check the status code
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.isStatusCodeSuccessful else {
                 completion(.failure(.serviceUnavailable))
                 return
             }
 
-            // check the status code
-            guard 200 ... 299 ~= httpResponse.statusCode else {
-                completion(.failure(.serviceUnavailable))
-                return
-            }
-
-            // get the data
-            guard let data = data else {
-                completion(.failure(.serviceUnavailable))
-                return
-            }
-
-            // try to get actual response encoding
-            var encoding: String.Encoding = .utf8
-            if let encodingName = httpResponse.textEncodingName {
-                let cfEncoding = CFStringConvertIANACharSetNameToEncoding(encodingName as CFString)
-                if cfEncoding != kCFStringEncodingInvalidId {
-                    let nsEncoding = CFStringConvertEncodingToNSStringEncoding(cfEncoding)
-                    encoding = String.Encoding(rawValue: nsEncoding)
-                }
-            }
-
-            // validate content-type
-
-            guard let responseText = self?.parseTextFromResponse(data: data, encoding: encoding) else {
+            // attempt to get the response text
+            guard let responseText = data.flatMap({ httpResponse.typografResponseText(from: $0) }) else {
                 completion(.failure(.invalidResponseData))
                 return
             }
@@ -93,48 +72,6 @@ extension ConcreteTypografService: TypografService {
         return CancellationToken {
             task.cancel()
         }
-    }
-
-}
-
-// MARK: - Private methods
-
-private extension ConcreteTypografService {
-
-    private func parseTextFromResponse(data: Data, encoding: String.Encoding) -> String? {
-        guard let responseString = String(data: data, encoding: encoding) else {
-            return nil
-        }
-
-        guard let regex = try? NSRegularExpression(pattern: ResponseConstants.regexPattern,
-                                                   options: []) else {
-            return nil
-        }
-
-        let wholeStringRange = NSRange(location: 0, length: responseString.utf16.count)
-        guard let match = regex.firstMatch(in: responseString,
-                                           options: [],
-                                           range: wholeStringRange),
-              match.numberOfRanges == ResponseConstants.regexNumberOfRanges else {
-            return nil
-        }
-
-        guard let range = Range(match.range(at: 1), in: responseString) else {
-            return nil
-        }
-
-        return String(responseString[range])
-    }
-
-}
-
-// MARK: - Constants
-
-fileprivate extension ConcreteTypografService {
-
-    enum ResponseConstants {
-        static let regexNumberOfRanges = 2
-        static let regexPattern = "<ProcessTextResult.*?>([\\s\\S]*?)\\n?<\\/ProcessTextResult.*?>"
     }
 
 }
