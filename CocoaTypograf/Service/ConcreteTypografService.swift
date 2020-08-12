@@ -38,11 +38,7 @@ extension ConcreteTypografService: TypografService {
     public func process(text: String,
                         parameters: ProcessTextParameters,
                         completion: @escaping CompletionHandler) -> CancellationToken {
-        var request = URLRequest(url: RequestConstants.url)
-        request.setValue(RequestConstants.contentType,
-                         forHTTPHeaderField: HeaderNameConstants.contentType)
-        request.httpMethod = RequestConstants.httpMethod
-        request.httpBody = parameters.requestBody(text: text).data(using: .utf8)
+        let request = URLRequest(text: text, parameters: parameters)
 
         let task = session.dataTask(with: request) { [weak self] (data, response, error) in
             // check if there was an error
@@ -103,7 +99,7 @@ extension ConcreteTypografService: TypografService {
 
 // MARK: - Private methods
 
-extension ConcreteTypografService {
+private extension ConcreteTypografService {
 
     private func parseTextFromResponse(data: Data, encoding: String.Encoding) -> String? {
         guard let responseString = String(data: data, encoding: encoding) else {
@@ -119,7 +115,7 @@ extension ConcreteTypografService {
         guard let match = regex.firstMatch(in: responseString,
                                            options: [],
                                            range: wholeStringRange),
-            match.numberOfRanges == 2 else {
+              match.numberOfRanges == ResponseConstants.regexNumberOfRanges else {
             return nil
         }
 
@@ -134,23 +130,11 @@ extension ConcreteTypografService {
 
 // MARK: - Constants
 
-extension ConcreteTypografService {
+fileprivate extension ConcreteTypografService {
 
-    fileprivate enum HeaderNameConstants {
-        static let contentType = "Content-Type"
-    }
-
-    fileprivate enum RequestConstants {
-        static let contentType = "application/soap+xml; charset=utf-8"
-        static let httpMethod = "POST"
-        static let url = URL(string: "http://typograf.artlebedev.ru/webservices/typograf.asmx")!
-    }
-
-    fileprivate enum ResponseConstants {
-        static let regexPattern = NSLocalizedString("soap.response.processText.regex.text",
-                                                    tableName: "SOAP",
-                                                    bundle: Bundle.current,
-                                                    comment: "")
+    enum ResponseConstants {
+        static let regexNumberOfRanges = 2
+        static let regexPattern = "<ProcessTextResult.*?>([\\s\\S]*?)\\n?<\\/ProcessTextResult.*?>"
     }
 
 }

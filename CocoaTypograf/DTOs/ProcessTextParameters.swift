@@ -49,20 +49,31 @@ public struct ProcessTextParameters {
 
 // MARK: - Constants
 
-extension ProcessTextParameters {
+fileprivate extension ProcessTextParameters {
 
-    fileprivate enum Constants {
-        static let bodyFormatString = NSLocalizedString("soap.request.processText.format",
-                                                        tableName: "SOAP",
-                                                        bundle: Bundle.current,
-                                                        comment: "")
+    enum Constants {
+        static let bodyFormatString = """
+<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'>
+    <soapenv:Header>
+    </soapenv:Header>
+    <soapenv:Body>
+        <tns:ProcessText xmlns:tns='http://typograf.artlebedev.ru/webservices/'>
+            <tns:text>%@</tns:text>
+            <tns:entityType>%d</tns:entityType>
+            <tns:maxNobr>%u</tns:maxNobr>
+            <tns:useBr>%@</tns:useBr>
+            <tns:useP>%@</tns:useP>
+        </tns:ProcessText>
+    </soapenv:Body>
+</soapenv:Envelope>
+"""
     }
 
 }
 
 // MARK: - Body text presentation
 
-extension ProcessTextParameters {
+internal extension ProcessTextParameters {
 
     /// Produces a request body string using the parameters for a given text.
     /// - Parameter text: A text to be processed and passed within a produced request string.
@@ -72,8 +83,8 @@ extension ProcessTextParameters {
                       text,
                       entityType.rawValue,
                       maxNonBreakingSpaces,
-                      useBreakLineTags ? "true" : "false",
-                      useParagraphTags ? "true" : "false")
+                      "\(useBreakLineTags)",
+                      "\(useParagraphTags)")
     }
 
 }
