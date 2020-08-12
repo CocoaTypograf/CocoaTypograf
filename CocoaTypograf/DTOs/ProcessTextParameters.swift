@@ -49,9 +49,9 @@ public struct ProcessTextParameters {
 
 // MARK: - Constants
 
-extension ProcessTextParameters {
+fileprivate extension ProcessTextParameters {
 
-    fileprivate enum Constants {
+    enum Constants {
         static let bodyFormatString = """
 <soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'>
     <soapenv:Header>
@@ -73,7 +73,7 @@ extension ProcessTextParameters {
 
 // MARK: - Body text presentation
 
-extension ProcessTextParameters {
+internal extension ProcessTextParameters {
 
     /// Produces a request body string using the parameters for a given text.
     /// - Parameter text: A text to be processed and passed within a produced request string.

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Bundle {
+internal extension Bundle {
 
     @objc fileprivate final class _BundleAnchor: NSObject {
     }

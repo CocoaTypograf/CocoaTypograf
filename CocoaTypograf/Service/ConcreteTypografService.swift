@@ -99,7 +99,7 @@ extension ConcreteTypografService: TypografService {
 
 // MARK: - Private methods
 
-extension ConcreteTypografService {
+private extension ConcreteTypografService {
 
     private func parseTextFromResponse(data: Data, encoding: String.Encoding) -> String? {
         guard let responseString = String(data: data, encoding: encoding) else {
@@ -130,9 +130,9 @@ extension ConcreteTypografService {
 
 // MARK: - Constants
 
-extension ConcreteTypografService {
+fileprivate extension ConcreteTypografService {
 
-    fileprivate enum ResponseConstants {
+    enum ResponseConstants {
         static let regexNumberOfRanges = 2
         static let regexPattern = "<ProcessTextResult.*?>([\\s\\S]*?)\\n?<\\/ProcessTextResult.*?>"
     }
