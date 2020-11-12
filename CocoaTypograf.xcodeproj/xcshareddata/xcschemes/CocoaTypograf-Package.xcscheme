@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "9999"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5BCF2B5A213EB79C00FCB293"
+               BlueprintIdentifier = "CocoaTypograf::CocoaTypograf"
                BuildableName = "CocoaTypograf.framework"
-               BlueprintName = "CocoaTypograf-macOS"
-               ReferencedContainer = "container:CocoaTypograf.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5BCF2B7B213ECB2700FCB293"
-               BuildableName = "CocoaTypografTests.xctest"
-               BlueprintName = "CocoaTypograf-macOSTests"
+               BlueprintName = "CocoaTypograf"
                ReferencedContainer = "container:CocoaTypograf.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5BCF2B7B213ECB2700FCB293"
+               BlueprintIdentifier = "CocoaTypograf::CocoaTypografTests"
                BuildableName = "CocoaTypografTests.xctest"
-               BlueprintName = "CocoaTypograf-macOSTests"
+               BlueprintName = "CocoaTypografTests"
                ReferencedContainer = "container:CocoaTypograf.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -64,15 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5BCF2B5A213EB79C00FCB293"
-            BuildableName = "CocoaTypograf.framework"
-            BlueprintName = "CocoaTypograf-macOS"
-            ReferencedContainer = "container:CocoaTypograf.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -80,15 +57,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5BCF2B5A213EB79C00FCB293"
-            BuildableName = "CocoaTypograf.framework"
-            BlueprintName = "CocoaTypograf-macOS"
-            ReferencedContainer = "container:CocoaTypograf.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

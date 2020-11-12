@@ -6,7 +6,9 @@
 //  Copyright © 2018 dreadct. All rights reserved.
 //
 
+import Foundation
 import XCTest
+@testable import CocoaTypograf
 
 final class CocoaTypografTests: XCTestCase {
 
@@ -102,22 +104,10 @@ extension CocoaTypografTests {
 
     fileprivate enum Constants {
 
-        static let nbspSourceString = NSLocalizedString("test.nbsp.source",
-                                                        tableName: "Test",
-                                                        bundle: Bundle.current,
-                                                        comment: "")
-        static let nbspExpectedString = NSLocalizedString("test.nbsp.expected",
-                                                          tableName: "Test",
-                                                          bundle: Bundle.current,
-                                                          comment: "")
-        static let quotesSourceString = NSLocalizedString("test.quotes.source",
-                                                          tableName: "Test",
-                                                          bundle: Bundle.current,
-                                                          comment: "")
-        static let quotesExpectedString = NSLocalizedString("test.quotes.expected",
-                                                            tableName: "Test",
-                                                            bundle: Bundle.current,
-                                                            comment: "")
+        static let nbspSourceString = "в воде"
+        static let nbspExpectedString = "в воде"
+        static let quotesSourceString = "\"жёлтый\" человек"
+        static let quotesExpectedString = "«жёлтый» человек"
 
         static let postTimeoutCancellationAwaitingDelay: TimeInterval = 0.25
         static let postTimeoutExpectationFulfillingDelay: TimeInterval = 0.125

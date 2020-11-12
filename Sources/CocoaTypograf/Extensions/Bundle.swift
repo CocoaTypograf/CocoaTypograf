@@ -8,13 +8,11 @@
 
 import Foundation
 
-extension Bundle {
-
-    @objc fileprivate final class _BundleAnchor: NSObject {
-    }
+internal extension Bundle {
 
     /// Returns a current bundle.
     static var current: Bundle {
+        @objc final class _BundleAnchor: NSObject {}
         return Bundle(for: _BundleAnchor.self)
     }
 

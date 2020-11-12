@@ -30,7 +30,7 @@ public struct CancellationToken {
     /// Initializes a new cancellation token with a given cancellation closure.
     /// - Parameter cancellation: A cancellation closure to be associeted with the token.
     /// Called once after the token is cancelled.
-    init(cancellation: @escaping () -> Void) {
+    public init(cancellation: @escaping () -> Void) {
         self.cancellation = cancellation
     }
 
